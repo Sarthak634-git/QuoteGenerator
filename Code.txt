@@ -82,3 +82,45 @@ body{
     transition: all 300ms ease-in-out;
     color: green;
 }
+
+==================================================================JavaScript==================================================================
+
+const btnEl = document.getElementById("btn");
+const quoteEl = document.getElementById("quote");
+const authorEl = document.getElementById("author");
+
+const apiURL = "http://api.quotable.io/random";
+
+async function getQuote() {
+  try {
+
+    btnEl.innerText = "Loading...";
+    btnEl.disabled = true;
+
+    quoteEl.innerText = "Updating...";
+    authorEl.innerText = "~ Updating";
+
+    const response = await fetch(apiURL);
+    const data = await response.json();
+    console.log(data);
+
+    const quoteContent = data.content;
+    const quoyeAuthor = data.author;
+
+    quoteEl.innerText = quoteContent;
+    authorEl.innerText = "~" + quoyeAuthor;
+
+    btnEl.innerText = "GET QUOTE";
+    btnEl.disabled = false;
+  } catch (error) {
+    console.log("ERROR");
+
+    quoteEl.innerText = "An error has occured, Plz try again later";
+    authorEl.innerText = "Occurance of Error";
+  }
+}
+
+
+getQuote();
+
+btnEl.addEventListener("click", getQuote);
