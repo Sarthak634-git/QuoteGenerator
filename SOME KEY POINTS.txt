@@ -1,0 +1,23 @@
+		SOME KEY POINTS
+
+1. const (btnEl)    == get the access to all document clicking button
+2. addActionListner == adding action to the btn when clicked certained funtion operates (QUOTES)
+3. funtion (QUOTES) == When clicked the btn operate this function
+4. API URL	    == Get an API URL and const 
+		function async use await for the url to be fetch and give response other wise occurance of ERROR
+5. Inside Function  == Response the request btn and fetch data from APIURL
+6. Response to jason== Convert the fetch data to json
+		WE only need content and auther so
+7. quoteContent
+8. quoteAuthor
+======================================================================================================================
+			-> inner HTML<-
+9. const (quoteEl) == get the access for the quote section document.getElementbyID("quote");
+10. quoteEl.innerText	   == quoteContent
+11. authorEl.innerText	   == quoteAuther
+======================================================================================================================
+			-> Occurance of error<-
+12. TRY AND CATCH	== In catch change the innerText of quote span and author (quoteEl.innerText = "Error")
+======================================================================================================================
+			-> for loading screen if the net is slow<-
+13. btn disable		== btnEl.innerText = loading and btnEl disable=true also enable it otherwise it can't be clicked again
